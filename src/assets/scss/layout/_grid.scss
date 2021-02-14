@@ -1,0 +1,8 @@
+@mixin set-normal-grid($jc, $ai) {
+  display: grid !important;
+  place-content: $ai $jc;
+}
+
+.normal-grid-cc {
+  @include set-normal-grid(center, center);
+}

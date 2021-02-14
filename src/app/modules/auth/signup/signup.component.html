@@ -1,0 +1,83 @@
+<div class="h-100p normal-grid-cc">
+  <mat-card>
+    <mat-card-header class="flex jc-center">
+      <mat-card-title>Registro</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form
+        class="normal-grid-cc"
+        [formGroup]="signUpForm"
+        (ngSubmit)="signUp()"
+      >
+        <mat-form-field appearance="outline">
+          <span matPrefix>
+            <mat-icon>person</mat-icon>
+          </span>
+          <mat-label>username</mat-label>
+          <input
+            type="text"
+            matInput
+            formControlName="username"
+            autocomplete="off"
+            required
+          />
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <span matPrefix>
+            <mat-icon>vpn_key</mat-icon>
+          </span>
+          <mat-label>password</mat-label>
+          <input
+            [type]="passwordConfig[selectedPasswordConfig].type"
+            matInput
+            formControlName="password"
+            autocomplete="off"
+            required
+          />
+          <mat-error>Este campo es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <span matPrefix>
+            <mat-icon>vpn_key</mat-icon>
+          </span>
+          <mat-label>repetir password</mat-label>
+          <input
+            [type]="passwordConfig[selectedPasswordConfig].type"
+            matInput
+            formControlName="confirmPassword"
+            autocomplete="off"
+            required
+          />
+          <span matSuffix>
+            <button
+              type="button"
+              mat-icon-button
+              (click)="alternatePasswordConfig()"
+            >
+              <mat-icon>
+                {{ passwordConfig[selectedPasswordConfig].icon }}
+              </mat-icon>
+            </button>
+          </span>
+          <mat-error
+            >Este campo es obligatorio y debe ser igual a la
+            contraseña</mat-error
+          >
+        </mat-form-field>
+        <button type="submit" hidden></button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="flex jc-space-between">
+      <button mat-button routerLink="../signin">Iniciar Sesión</button>
+      <button
+        (click)="signUp()"
+        mat-raised-button
+        color="primary"
+        [disabled]="signUpForm.invalid"
+      >
+        Registrarse
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

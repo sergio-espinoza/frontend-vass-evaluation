@@ -1,0 +1,28 @@
+<mat-drawer-container class="h-100p" autoSize>
+  <mat-drawer #menuDrawer mode="over" position="start">
+    <mat-sidenav-container class="h-100p">
+      <app-nav-list (navigate)="menuDrawer.close()"></app-nav-list>
+    </mat-sidenav-container>
+  </mat-drawer>
+  <mat-drawer #configDrawer mode="over" position="end">
+    <mat-sidenav-container class="h-100p">
+      <app-nav-config></app-nav-config>
+    </mat-sidenav-container>
+  </mat-drawer>
+  <div class="home-container h-100p">
+    <mat-toolbar>
+      <button mat-icon-button (click)="menuDrawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Dashboad</span>
+    </mat-toolbar>
+    <button
+      class="config-button"
+      mat-raised-button
+      (click)="configDrawer.toggle()"
+    >
+      <mat-icon>settings</mat-icon>
+    </button>
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

@@ -1,0 +1,64 @@
+@mixin set-normal-flex($direction, $jc, $ai) {
+  display: flex !important;
+  flex-direction: $direction !important;
+  justify-content: $jc !important;
+  align-items: $ai !important;
+}
+
+.normal-flex-ccc {
+  @include set-normal-flex(column, center, center);
+}
+.normal-flex-rcc {
+  @include set-normal-flex(row, center, center);
+}
+.flex {
+  display: flex !important;
+}
+.fd-row {
+  flex-direction: row;
+}
+.fd-column {
+  flex-direction: column;
+}
+.jc-center {
+  justify-content: center;
+}
+.jc-flex-end {
+  justify-content: flex-end;
+}
+.jc-flex-start {
+  justify-content: flex-start;
+}
+.jc-stretch {
+  justify-content: stretch;
+}
+.jc-space-evenly {
+  justify-content: space-evenly;
+}
+.jc-space-around {
+  justify-content: space-around;
+}
+.jc-space-between {
+  justify-content: space-between;
+}
+.ai-center {
+  align-items: center;
+}
+.ai-flex-end {
+  align-items: flex-end;
+}
+.ai-flex-start {
+  align-items: flex-start;
+}
+.ai-stretch {
+  align-items: stretch;
+}
+.ai-space-evenly {
+  align-items: space-evenly;
+}
+.ai-space-around {
+  align-items: space-around;
+}
+.ai-space-between {
+  align-items: space-between;
+}

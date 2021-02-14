@@ -1,0 +1,13 @@
+<div
+  class="h-100p of-hidden"
+  [@routeAnimations]="prepareRoute(outlet)"
+>
+  <button
+    mat-raised-button
+    class="alternate-light-dark"
+    (click)="switchTheme()"
+  >
+    <mat-icon>brightness_6</mat-icon>
+  </button>
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

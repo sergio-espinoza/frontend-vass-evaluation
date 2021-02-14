@@ -1,0 +1,25 @@
+<div class="ta-center h-100p sidenav-content">
+  <mat-toolbar class="mat-elevation-z1" color="accent"
+    ><span mat-title>Configuración</span></mat-toolbar
+  >
+  <div class="config-content">
+    <h4>Selecciona el Color de Tema</h4>
+    <mat-divider></mat-divider>
+    <div class="item-content">
+      <button
+        mat-mini-fab
+        *ngFor="let themeColorButton of themeColorButtons"
+        (click)="changeThemeColor(themeColorButton.themeName)"
+        [style.backgroundColor]="themeColorButton.backgroundColor"
+        [style.color]="themeColorButton.color"
+      >
+        <mat-icon>palette</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="config-content">
+    <h4>Selecciona la tipo de Letra</h4>
+    <mat-divider></mat-divider>
+    <div class="item-content"></div>
+  </div>
+</div>
